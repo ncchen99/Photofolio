@@ -2,6 +2,10 @@
 
 馬臉 (Horse Face) 的個人攝影作品集。靜態網站：Next.js 15 (App Router, SSG) + Tailwind v4 + 自製 greedy masonry + Swiper lightbox + sharp 轉檔 + jsDelivr 當圖片 CDN。所有路由都是 build-time 靜態產生，沒有 server runtime。
 
+| 首頁 | 相簿內頁 |
+| :---: | :---: |
+| ![首頁](./docs/demo/demo1.png) | ![相簿內頁](./docs/demo/demo2.png) |
+
 ## 加一本新相簿
 
 最常做的事，照這五步走：
