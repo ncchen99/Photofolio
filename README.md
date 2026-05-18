@@ -4,7 +4,7 @@
 
 | 首頁 | 相簿內頁 |
 | :---: | :---: |
-| ![首頁](./docs/demo/demo1.png) | ![相簿內頁](./docs/demo/demo2.png) |
+| ![首頁](./docs/demo/demo1.webp) | ![相簿內頁](./docs/demo/demo2.webp) |
 
 ## 加一本新相簿
 
