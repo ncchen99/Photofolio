@@ -43,9 +43,14 @@ URL 組裝邏輯在 `src/lib/cdn.ts`。
 
 ## 部署
 
-Vercel：`vercel --prod` 或直接 push 到 GitHub 然後在 Vercel 後台 import。記得在專案的 Environment Variables 設 `NEXT_PUBLIC_CDN_BASE`。
+目前 `.github/workflows/deploy.yml` 會在 `main` 分支 push 時自動部署到 Netlify，部署來源是 `next build` 產生的 `out/` 靜態檔案。
 
-因為全部路由都是 SSG，要丟到 Cloudflare Pages、Netlify、GitHub Pages 之類的靜態 host 也都可以——`next build` 出來的 `.next` 直接服務即可（或用 `next export` 拿純靜態檔）。
+請先在 GitHub repository secrets 設定：
+
+- `NETLIFY_AUTH_TOKEN`
+- `NETLIFY_SITE_ID`
+
+另外記得在 Netlify（或對應部署環境）設定 `NEXT_PUBLIC_CDN_BASE`。
 
 ## 哪個檔案改什麼
 
