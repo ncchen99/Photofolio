@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import SkeletonImage from "./SkeletonImage";
 import type { Photo } from "@/lib/albums";
 import { cdnUrl } from "@/lib/cdn";
 import MasonryGrid from "./Masonry";
@@ -27,10 +27,10 @@ export default function PhotoGrid({ photos }: { photos: Photo[] }) {
               key={p.src}
               type="button"
               onClick={() => setOpenIdx(i)}
-              className="group relative block w-full overflow-hidden bg-[#1a1410] cursor-zoom-in"
+              className="group relative block w-full overflow-hidden cursor-zoom-in"
               aria-label={`Open photo ${i + 1}`}
             >
-              <Image
+              <SkeletonImage
                 src={cdnUrl(p.thumb || p.src)}
                 alt=""
                 width={p.width}

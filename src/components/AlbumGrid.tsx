@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import SkeletonImage from "./SkeletonImage";
 import Link from "next/link";
 import type { Album } from "@/lib/albums";
 import { cdnUrl } from "@/lib/cdn";
@@ -25,9 +25,9 @@ export default function AlbumGrid({ albums }: { albums: Album[] }) {
             <Link
               key={a.slug}
               href={`/album/${a.slug}`}
-              className="group block relative overflow-hidden bg-[#1a1410]"
+              className="group block relative overflow-hidden"
             >
-              <Image
+              <SkeletonImage
                 src={cdnUrl(a.cover)}
                 alt={a.title}
                 width={first?.width ?? 1200}

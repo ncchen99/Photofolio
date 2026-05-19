@@ -23,13 +23,21 @@ export async function generateMetadata(
   if (!album) return {};
   const title = `${album.title} — Horse Face`;
   const description = album.description || `${album.titleEn} · ${album.photos.length} frames.`;
+  const imageUrl = cdnUrl(album.cover);
+  
   return {
     title,
     description,
     openGraph: {
       title,
       description,
-      images: [{ url: cdnUrl(album.cover) }],
+      images: [{ url: imageUrl }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [imageUrl],
     },
   };
 }

@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Keyboard, Navigation } from "swiper/modules";
 import type { Swiper as SwiperClass } from "swiper";
-import Image from "next/image";
+import SkeletonImage from "./SkeletonImage";
 import {
   XMarkIcon,
   ChevronLeftIcon,
@@ -100,16 +100,19 @@ export default function Lightbox({ photos, index, onClose, onIndexChange }: Prop
         {photos.map((p, i) => (
           <SwiperSlide key={p.src} className="flex items-center justify-center">
             <div className="w-full h-full flex items-center justify-center p-4 md:p-12">
-              <Image
-                src={cdnUrl(p.src)}
-                alt=""
-                width={p.width}
-                height={p.height}
-                sizes="100vw"
-                priority={Math.abs(i - index) <= 1}
-                className="max-w-full max-h-full w-auto h-auto object-contain select-none"
-                draggable={false}
-              />
+              <div className="relative flex max-w-full max-h-full">
+                <SkeletonImage
+                  src={cdnUrl(p.src)}
+                  alt=""
+                  width={p.width}
+                  height={p.height}
+                  sizes="100vw"
+                  priority={Math.abs(i - index) <= 1}
+                  className="max-w-full max-h-full w-auto h-auto object-contain select-none"
+                  skeletonClassName="bg-white/5"
+                  draggable={false}
+                />
+              </div>
             </div>
           </SwiperSlide>
         ))}

@@ -23,6 +23,8 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
+import { cdnUrl } from "@/lib/cdn";
+
 export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
@@ -30,6 +32,28 @@ export const metadata: Metadata = {
   title: "Horse Face · Photofolio",
   description:
     "Photographs by 馬臉 (Horse Face) — Tanaka, Taiwan.",
+  openGraph: {
+    title: "Horse Face · Photofolio",
+    description: "Photographs by 馬臉 (Horse Face) — Tanaka, Taiwan.",
+    url: "/",
+    siteName: "Horse Face · Photofolio",
+    images: [
+      {
+        url: cdnUrl("/avatar.webp"),
+        width: 1200,
+        height: 630,
+        alt: "Horse Face · Photofolio",
+      },
+    ],
+    locale: "zh_TW",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Horse Face · Photofolio",
+    description: "Photographs by 馬臉 (Horse Face) — Tanaka, Taiwan.",
+    images: [cdnUrl("/avatar.webp")],
+  },
   icons: {
     icon: [
       { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import SkeletonImage from "./SkeletonImage";
 import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
 import type { Bio } from "@/lib/albums";
 import { cdnUrl } from "@/lib/cdn";
@@ -7,13 +7,13 @@ export default function Hero({ bio }: { bio: Bio }) {
   return (
     <section className="px-6 md:px-12 pt-10 md:pt-14 pb-12 md:pb-16">
       <div className="flex flex-col sm:flex-row gap-8 sm:gap-10 sm:items-start">
-        <div className="shrink-0">
-          <Image
+        <div className="shrink-0 relative w-[120px] h-[120px] md:w-[150px] md:h-[150px]">
+          <SkeletonImage
             src={cdnUrl(bio.avatar)}
             alt={bio.name}
             width={200}
             height={200}
-            className="w-[120px] h-[120px] md:w-[150px] md:h-[150px] object-cover"
+            className="w-full h-full object-cover"
             priority
           />
         </div>
