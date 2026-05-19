@@ -27,6 +27,9 @@ jobs:
         run: npm ci
       - name: Build with Next.js
         run: npm run build
+        env:
+          NEXT_PUBLIC_CDN_BASE: ${{ secrets.NEXT_PUBLIC_CDN_BASE }}
+          NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
       - name: Deploy to Netlify
         uses: netlify/actions/cli@master
         with:

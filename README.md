@@ -36,14 +36,37 @@
 ## 本地 vs 生產的圖片 URL
 
 - 本地開發：`NEXT_PUBLIC_CDN_BASE` 不設定，圖片直接從 `/albums/...`（也就是 `public/albums/`）讀。
-- 生產環境：設定 `NEXT_PUBLIC_CDN_BASE` 環境變數，所有圖片 URL 會自動前綴成 jsDelivr CDN 路徑。
+- 生產環境：設定 `NEXT_PUBLIC_CDN_BASE` 環境變數，所有圖片 URL 會自動前綴成 jsDelivr CDN 或 GitHub Raw 路徑。
 
 範例值見 `.env.example`：
 ```
-NEXT_PUBLIC_CDN_BASE=https://cdn.jsdelivr.net/gh/<your-github>/Photofolio@main/public
+# 使用 jsDelivr (推薦)
+NEXT_PUBLIC_CDN_BASE=https://cdn.jsdelivr.net/gh/ncchen99/Photofolio@main/public
+
+# 直接使用 GitHub Raw
+NEXT_PUBLIC_CDN_BASE=https://raw.githubusercontent.com/ncchen99/Photofolio/refs/heads/main/public
 ```
 
 URL 組裝邏輯在 `src/lib/cdn.ts`。
+
+## 社群分享與 Meta 設定 (Open Graph / Twitter Cards)
+
+本專案已在 `src/app/layout.tsx` 與 `src/app/album/[slug]/page.tsx` 中配置了完整的 Open Graph 與 Twitter Card 資訊，支援在 FB、LINE、Twitter (X) 上分享連結時自動顯示精美資訊：
+
+- **首頁**：分享縮圖預設顯示作者頭像 (`/avatar.webp`)。
+- **相簿內頁**：分享縮圖自動覆寫為**該相簿的封面圖**。
+
+### ⚠️ 生產環境必要變數設定
+
+社群平台的爬蟲（Crawlers）必須取得 **絕對網址** 才能成功解析並顯示分享圖片。請確保你在部署平台（如 Netlify 或 GitHub Pages）的環境變數中設定了以下項目：
+
+1. **`NEXT_PUBLIC_SITE_URL`**
+   - **說明**：你網站的正式網域主網址。Next.js 會以它為基準來為所有相對路徑（包括 avatar 圖片）補上絕對網址。
+   - **範例值**：`https://ncchen99.github.io/Photofolio` (或你的自訂網域)
+
+2. **`NEXT_PUBLIC_CDN_BASE`**
+   - **說明**：圖片的 CDN 或是實體 GitHub 資料夾路徑。
+   - **範例值**：`https://raw.githubusercontent.com/ncchen99/Photofolio/refs/heads/main/public` (或 jsDelivr 網址)
 
 ## 部署
 
