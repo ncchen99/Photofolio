@@ -40,7 +40,7 @@ export default function PhotoGrid({ photos }: { photos: Photo[] }) {
               />
 
               {/* Fog edges: softens the transition between image and background */}
-              <div
+              <span
                 className="absolute inset-0 pointer-events-none"
                 style={{
                   boxShadow: "inset 0 0 12px 4px rgba(241, 232, 212, 0.10)",

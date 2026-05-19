@@ -17,7 +17,7 @@ export default function SkeletonImage({
   return (
     <>
       {/* Skeleton overlay */}
-      <div 
+      <span 
         className={`absolute inset-0 ${skeletonClassName} transition-opacity duration-500 pointer-events-none ${
           isLoaded ? "opacity-0" : "opacity-100 animate-pulse"
         }`} 

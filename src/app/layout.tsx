@@ -25,10 +25,17 @@ const jetbrainsMono = JetBrains_Mono({
 
 import { cdnUrl } from "@/lib/cdn";
 
+const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "").trim();
+const metadataBase = (() => {
+  try {
+    return new URL(siteUrl || "http://localhost:3000");
+  } catch {
+    return new URL("http://localhost:3000");
+  }
+})();
+
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
-  ),
+  metadataBase,
   title: "Horse Face · Photofolio",
   description:
     "Photographs by 馬臉 (Horse Face) — Tanaka, Taiwan.",
