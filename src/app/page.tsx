@@ -22,7 +22,7 @@ export default function HomePage() {
       </main>
 
       <footer className="px-6 md:px-12 py-10 font-mono text-[11px] tracking-[0.22em] uppercase text-ink-mute">
-        © {new Date().getFullYear()} Horse Face
+        © {new Date().getFullYear()} horseface
       </footer>
     </div>
   );

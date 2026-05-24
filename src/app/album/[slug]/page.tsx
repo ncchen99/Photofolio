@@ -21,7 +21,7 @@ export async function generateMetadata(
   const { slug } = await params;
   const album = getAlbum(slug);
   if (!album) return {};
-  const title = `${album.title} — Horse Face`;
+  const title = `${album.title} — horseface`;
   const description = album.description || `${album.titleEn} · ${album.photos.length} frames.`;
   const imageUrl = cdnUrl(album.cover);
   

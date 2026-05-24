@@ -31,8 +31,8 @@ const ALBUMS = [
 ALBUMS[ALBUMS.length - 1].title = "老鏡試用";
 
 const BIO = {
-  name: "馬臉",
-  nameEn: "Horse Face",
+  name: "horseface",
+  nameEn: "horseface",
   location: "Tanaka, Taiwan",
   intro: "Keep studying until you know who I am.",
   social: [

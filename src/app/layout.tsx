@@ -36,20 +36,20 @@ const metadataBase = (() => {
 
 export const metadata: Metadata = {
   metadataBase,
-  title: "Horse Face · Photofolio",
+  title: "horseface · Photofolio",
   description:
-    "Photographs by 馬臉 (Horse Face) — Tanaka, Taiwan.",
+    "Photographs by 馬臉 (horseface) — Tanaka, Taiwan.",
   openGraph: {
-    title: "Horse Face · Photofolio",
-    description: "Photographs by 馬臉 (Horse Face) — Tanaka, Taiwan.",
+    title: "horseface · Photofolio",
+    description: "Photographs by 馬臉 (horseface) — Tanaka, Taiwan.",
     url: "/",
-    siteName: "Horse Face · Photofolio",
+    siteName: "horseface · Photofolio",
     images: [
       {
         url: cdnUrl("/avatar.webp"),
         width: 1200,
         height: 630,
-        alt: "Horse Face · Photofolio",
+        alt: "horseface · Photofolio",
       },
     ],
     locale: "zh_TW",
@@ -57,8 +57,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Horse Face · Photofolio",
-    description: "Photographs by 馬臉 (Horse Face) — Tanaka, Taiwan.",
+    title: "horseface · Photofolio",
+    description: "Photographs by 馬臉 (horseface) — Tanaka, Taiwan.",
     images: [cdnUrl("/avatar.webp")],
   },
   icons: {

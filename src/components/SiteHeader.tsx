@@ -14,7 +14,7 @@ export default function SiteHeader({ back = false }: { back?: boolean }) {
             Index
           </>
         ) : (
-          "Horse Face · Photofolio"
+          "horseface · Photofolio"
         )}
       </Link>
       <span className="font-mono text-[11px] tracking-[0.22em] uppercase text-ink-mute">
